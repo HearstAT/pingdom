@@ -38,16 +38,13 @@ Usage
 
 Set you chef hostname by changing the following
 
-'''
-    chefserver = 'https://chef_server.front_end.url'
-'''
-
+```ruby
+chefserver = 'https://chef_server.front_end.url'
+```
 Change the following items to represent the path you with the files to be generated (e.g. Nginx content directory)
-
-'''
-    filename = '/path/to/chef.xml'
-'''
-
-'''
-    filename = '/path/to/#{key}.xml'
-'''
+```ruby
+filename = '/path/to/chef.xml'
+```
+```ruby
+filename = '/path/to/#{key}.xml'
+```
