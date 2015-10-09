@@ -1,5 +1,8 @@
 # Pingdom Custom HTTP Check - Chef Status
 
+Description
+-----
+
 Pingdom requires a specific type of output for their [custom checks](http://royal.pingdom.com/2008/07/14/new-pingdom-feature-custom-monitoring-type/), so I wrote a script to do that for private chef.
 
 This is a script written in ruby that can be ran from anywhere as long as it can hit `https://chef_server.front_end.url/_status`
@@ -22,3 +25,29 @@ Each xml will be created with similar data listed below
 
 Status is going to be either OK or ERROR
 Response time generated via ruby benchmark timing the response of the curl against the service check
+
+Requirements
+----
+
+Ruby Gems:
+* [nokogiri](http://www.nokogiri.org/):[Github](https://github.com/sparklemotion/nokogiri)
+* [curb](http://taf2.github.io/curb/):[Github](https://github.com/taf2/curb)
+
+Usage
+----
+
+Set you chef hostname by changing the following
+
+'''
+    chefserver = 'https://chef_server.front_end.url'
+'''
+
+Change the following items to represent the path you with the files to be generated (e.g. Nginx content directory)
+
+'''
+    filename = '/path/to/chef.xml'
+'''
+
+'''
+    filename = '/path/to/#{key}.xml'
+'''

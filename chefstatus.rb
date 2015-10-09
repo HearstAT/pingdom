@@ -16,7 +16,7 @@ end
 getstatus = JSON.parse(@c.body_str)
 
 ##Overall Chef Status
-filename = 'chef.xml'
+filename = '/path/to/chef.xml'
 builder = Nokogiri::XML::Builder.new do |xml|
   xml.pingdom_http_custom_check do
     xml.status "#{getstatus['status'] == 'pong' ? 'OK' : 'ERROR'}"
@@ -27,7 +27,7 @@ File.write(filename, builder.to_xml)
 
 ##Iterate over upstreams/individual services
 getstatus['upstreams'].each do |key, value|
-  filename = "#{key}.xml"
+  filename = "/path/to/#{key}.xml"
   builder = Nokogiri::XML::Builder.new do |xml|
     xml.pingdom_http_custom_check do
       xml.status "#{value == 'pong' ? 'OK' : 'ERROR'}"
