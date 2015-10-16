@@ -2,6 +2,7 @@
 
 Description
 -----
+[![Code Climate](https://codeclimate.com/github/HearstAT/pingdom-chefstatus/badges/gpa.svg)](https://codeclimate.com/github/HearstAT/pingdom-chefstatus)
 
 Pingdom requires a specific type of output for their [custom checks](http://royal.pingdom.com/2008/07/14/new-pingdom-feature-custom-monitoring-type/), so I wrote a script to do that for private chef.
 
